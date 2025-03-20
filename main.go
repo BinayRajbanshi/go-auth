@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/BinayRajbanshi/go-auth/controllers"
 	"github.com/BinayRajbanshi/go-auth/database"
 	"github.com/BinayRajbanshi/go-auth/utils"
 	"github.com/gin-gonic/gin"
@@ -27,10 +28,6 @@ func main() {
 	// routes.AuthRoutes(router)
 	// routes.UserRoutes(router)
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Hello world",
-		})
-	})
+	router.POST("/api/v1/signup", controllers.Signup)
 	router.Run(":" + port)
 }
