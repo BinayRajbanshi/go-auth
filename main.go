@@ -29,5 +29,7 @@ func main() {
 	// routes.UserRoutes(router)
 
 	router.POST("/api/v1/signup", controllers.Signup)
+	router.POST("/api/v1/login", controllers.Login)
+
 	router.Run(":" + port)
 }
